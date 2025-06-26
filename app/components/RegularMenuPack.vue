@@ -10,7 +10,7 @@
         <UButton label="Drinks" :variant="display == 'drinks' ? 'solid' : 'outline'" size="lg"
           class="px-8 font-semibold" @click="display = 'drinks'" />
       </div>
-       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5" v-auto-animate>
+       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5" v-auto-animate>
           <ProductCard v-for="product in sortedProduct" :product="product" :key="product.id" />
         </div>
     </div>

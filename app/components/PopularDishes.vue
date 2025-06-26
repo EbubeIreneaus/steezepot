@@ -50,21 +50,22 @@ const slidePrev = () => {
 onMounted(() => {
   swiperInstance.value = new Swiper('.p-dish-swiper', {
     modules: [Navigation],
-    slidesPerView: 1,
-    spaceBetween: 15,
+    slidesPerView: 2,
+    spaceBetween: 10,
     breakpoints: {
-      464: {
-        slidesPerView: 2,
-      },
+     
       768: {
         slidesPerView: 3,
+        spaceBetween: 15,
 
       },
       992: {
         slidesPerView: 4,
+        spaceBetween: 15,
       },
       1024: {
         slidesPerView: 5,
+        spaceBetween: 15,
       },
     },
   });
