@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --color-primary: #F4B916;
+  --color-secondary: #fff3d9;
+  --color-default: #FFFFFF;
+  --color-background: #FFFAF2;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1F2937;
+  --color-text-body: #4B5563;
+  --font-roman: 'Times New Roman', 'Inter', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  --font-serif: 'Georgia', serif;
+  --font-display: 'Oswald', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+body{
+  font-family: 'Arial';
+  color: #1F2937;
+  overflow-x: hidden;
+}

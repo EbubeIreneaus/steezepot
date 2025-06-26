@@ -1,0 +1,72 @@
+<template>
+  <UContainer class="py-10 mt-5 overflow-x-hidden">
+    <div>
+       <div class="flex justify-between items-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Clients Reviews</h2>
+        <div class="flex items-center gap-x-3">
+          <UButton icon="fa6-solid:arrow-left" variant="outline" class="text-text-primary rounded-full shadow" size="lg"
+            @click="swipePrev()" :disabled="reviewSwiperInstance?.isBeginning" />
+          <UButton icon="fa6-solid:arrow-right" variant="outline" class="text-text-primary rounded-full shadow "
+            size="lg" @click="swipeNext()" :disabled="reviewSwiperInstance?.isEnd" />
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-container review-swiper">
+     <div class="swiper-wrapper">
+       <div class="swiper-slide" v-for="review in reviews" :key="review.name">
+        <UCard class="bg-surface ring-0 shadow">
+        <template #default>
+          <div>
+            <p class="font-roboto mb-3">
+              {{ review.review }}
+            </p>
+            <NuxtImg :src="`/images/users/${review.avatar}`" width="50" height="50" class="rounded-full object-cover object-center mb-3" />
+            <p class="font-display font-semibold">{{ review.name }}</p>
+          </div>
+        </template>
+      </UCard>
+       </div>
+     </div>
+    </div>
+  </UContainer>
+</template>
+
+<script lang="ts" setup>
+import { reviews } from '~/libs/review';
+import Swiper from 'swiper';
+import 'swiper/css';
+
+const reviewSwiperInstance = ref<Swiper | null>(null)
+
+const swipeNext = () => {
+  reviewSwiperInstance.value?.slideNext();
+}
+
+const swipePrev = () => {
+  reviewSwiperInstance.value?.slidePrev();
+}
+
+onMounted(() => {
+  reviewSwiperInstance.value = new Swiper('.review-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+
+      640: {
+        slidesPerView: 2,
+      },
+
+      992: {
+        slidesPerView: 3,
+      },
+    
+    },
+  });
+});
+
+</script>
+
+<style>
+
+</style>
