@@ -12,14 +12,14 @@
           <UButton icon="fa6-solid:magnifying-glass" label="Search" variant="outline" class="text-text-primary" />
         </div>
       </div>
-
+    
 
       <div class="size-full ">
         <div class="size-60 md:size-86 rounded-full bg-primary/10 flex items-center justify-center md:mx-auto">
           <div class="relative flex items-center size-[90%] mx-auto">
             <div class="absolute left-0 size-52 md:size-74 z-0 rounded-full border border-black/20"></div>
             <div class="absolute left-0  size-48 md:size-68 z-10 border border-black/10 rounded-full"></div>
-            <NuxtImg src="/images/hero-dish.png" width="280" height="290" format="webp" class="z-20 relative size-42 md:size-62" />
+            <NuxtImg src="/images/hero-dish.png" width="280" height="290" format="webp" class="z-20 relative size-46 md:size-62" />
 
             <div class="absolute flex flex-col -right-16 sm:-right-12 ">
               <UButton v-for="dish in dishes" :key="dish.name" variant="soft" size="sm"

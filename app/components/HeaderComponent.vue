@@ -26,7 +26,7 @@
 
     <nav ref="navLink" class=" aside flex items-center justify-center overflow-hidden">
       <ul>
-        <li v-for="link in NavLinks" :key="link.label" class="text-center capitalize font-semibold font-roboto mb-1" @click="toggleNav">
+        <li v-for="link in NavLinks" :key="link.label" class="text-center capitalize font-semibold font-roboto mb-2" @click="toggleNav">
           <nuxt-link :to="link.href">{{ link.label }}</nuxt-link>
         </li>
       </ul>

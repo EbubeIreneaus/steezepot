@@ -18,7 +18,7 @@
             <div>
               <p class="font-roboto leading-tight">Email Us</p>
               <a href="mailto:cooks@steezepot.com.ng" target="_blank" rel="noopener noreferrer"
-                class="text-text-secondary leading-tight block font-display">cooks@steezepot.com.ng</a>
+                class="text-text-secondary leading-tight block font-display text-lg">cooks@steezepot.com.ng</a>
             </div>
           </div>
 
@@ -29,7 +29,7 @@
             <div>
               <p class="font-roboto leading-tight">Call Us</p>
               <a href="tel:+2348061982520" target="_blank" rel="noopener noreferrer"
-                class="text-text-secondary leading-tight block font-display">+234 806 198 2520</a>
+                class="text-text-secondary leading-tight block font-display text-lg">+234 806 198 2520</a>
             </div>
           </div>
 
