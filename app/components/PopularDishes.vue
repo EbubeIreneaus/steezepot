@@ -4,10 +4,10 @@
       <div class="flex justify-between items-center mb-10">
         <h2 class="text-3xl md:text-4xl font-extrabold">Popular Dishes</h2>
         <div class="flex items-center gap-x-3">
-          <UButton icon="fa6-solid:arrow-left" variant="outline" class="text-text-primary rounded-full shadow" size="lg"
+          <UButton icon="fa6-solid:arrow-left" variant="outline" class="text-text-primary rounded-full shadow" size="xl"
             @click="slidePrev()" :disabled="swiperInstance?.isBeginning" />
           <UButton icon="fa6-solid:arrow-right" variant="outline" class="text-text-primary rounded-full shadow "
-            size="lg" @click="slideNext()" :disabled="swiperInstance?.isEnd" />
+            size="xl" @click="slideNext()" :disabled="swiperInstance?.isEnd" />
         </div>
       </div>
 

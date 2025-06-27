@@ -7,11 +7,11 @@
       <div>
         <div>
           <h3 class="text-4xl md:text-5xl font-bold">We are more than just a service</h3>
-          <p class="my-3 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nihil maxime, accusamus
+          <p class="mt-3 mb-7 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nihil maxime, accusamus
             minima iusto inventore quibusdam consequatur id distinctio vitae, eos voluptatem impedit soluta nostrum
             deleniti, eaque aliquid harum odit.</p>
 
-          <div class="grid grid-cols-2 gap-y-4 mb-10">
+          <div class="grid grid-cols-2 gap-y-4 gap-x-2 mb-10">
             <div class="flex gap-x-3 items-center">
               <NuxtImg src="/images/icons/online-order.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
               <p class="font-semibold font-roboto">Online Order</p>

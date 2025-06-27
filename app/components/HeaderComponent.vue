@@ -19,14 +19,14 @@
       </nav>
 
       <div class="flex items-center gap-x-3 md:hidden">
-         <UButton to="/#cart" variant="outline" icon="fa6-solid:cart-shopping" class="text-text-primary rounded-full " />
+         <UButton to="/#cart" variant="outline" icon="fa6-solid:cart-shopping" class="text-text-primary rounded-full " size="xl" />
       <UButton icon="fa6-solid:bars" size="xl" variant="outline" class="text-text-primary " @click="toggleNav()" />
       </div>
     </UContainer>
 
     <nav ref="navLink" class=" aside flex items-center justify-center overflow-hidden">
       <ul>
-        <li v-for="link in NavLinks" :key="link.label" class="text-center capitalize font-semibold font-roboto mb-2" @click="toggleNav">
+        <li v-for="link in NavLinks" :key="link.label" class="text-center text-lg capitalize font-semibold font-roboto mb-2" @click="toggleNav">
           <nuxt-link :to="link.href">{{ link.label }}</nuxt-link>
         </li>
       </ul>
@@ -73,7 +73,7 @@ onUnmounted(() => {
 <style>
 .aside {
   max-height: 0;
-  height: 150px;
+  height: 200px;
   opacity: 0;
   transition: all 0.3s linear;
 }
