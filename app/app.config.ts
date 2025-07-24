@@ -16,5 +16,23 @@ export default defineAppConfig({
         },
       },
     },
+
+    textarea: {
+      variants: {
+        variant: {
+          outline: "bg-transparent ring ring-primary/50 text-text-primary",
+          soft: "bg-transparent  text-text-primary hover:bg-transparent focus:bg-transparent",
+        },
+      },
+    },
+
+     select: {
+      variants: {
+        variant: {
+          outline: "bg-transparent ring ring-primary/50 text-text-primary",
+          soft: "bg-transparent  text-text-primary hover:bg-transparent focus:bg-transparent",
+        },
+      },
+    },
   },
 });

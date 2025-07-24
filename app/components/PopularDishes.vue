@@ -2,11 +2,11 @@
   <UContainer>
     <div>
       <div class="flex justify-between items-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold">Popular Dishes</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Recommend Dishes</h2>
         <div class="flex items-center gap-x-3">
-          <UButton icon="fa6-solid:arrow-left" variant="outline" class="text-text-primary rounded-full shadow" size="xl"
+          <UButton icon="fa6-solid:arrow-left" variant="outline" aria-label="slide left" class="text-text-primary rounded-full shadow" size="xl"
             @click="slidePrev()" :disabled="swiperInstance?.isBeginning" />
-          <UButton icon="fa6-solid:arrow-right" variant="outline" class="text-text-primary rounded-full shadow "
+          <UButton icon="fa6-solid:arrow-right" aria-label="slide right" variant="outline" class="text-text-primary rounded-full shadow "
             size="xl" @click="slideNext()" :disabled="swiperInstance?.isEnd" />
         </div>
       </div>
@@ -26,12 +26,13 @@
 
 <script lang="ts" setup>
 import { UContainer } from '#components';
-import { products } from '~/libs/products';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-
 import { ref } from 'vue';
+import type { Product } from '~~/types/products';
+
+defineProps<{products: Product[]}>()
 
 const swiperInstance = ref<Swiper | null>(null);
 

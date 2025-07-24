@@ -1,15 +1,43 @@
 <template>
-  <UCard class="bg-surface ring-0 rounded-lg shadow shadow-primary/50 h-full" as="div">
+  <UCard
+    class="bg-surface ring-0 rounded-lg shadow h-full"
+    as="div"
+  >
     <template #default>
       <div>
-        <NuxtImg :src="`/images/food/${product.image}`" format="webp" class="mx-auto size-28 sm:size-32 object-cover" />
-        <h4 class=" text-center font-extrabold">{{ product.name }}</h4>
+        <div class="size-28 sm:size-32 overflow-hidden mx-auto">
+          <CldImage
+            :src="product.image"
+            :alt="product.alt || product.name"
+            remove-background
+            format="webp"
+            width="100"
+            height="100"
+          />
+        </div>
+        <h3 class="text-center font-extrabold">{{ product.name }}</h3>
         <p class="text-xs text-center line-clamp-2 my-3">{{ product.desc }}</p>
-        <div class="flex justify-between items-center">
-          <span class="text-sm md:text-base font-semibold" v-naira="product.price"></span>
-          <UButton  label="Add To Cart" variant="outline" class="text-text-primary rounded-full font-bold hidden md:block" size="sm" />
-          <UButton icon="fa6-solid:cart-plus" variant="outline" class="text-text-primary rounded-full font-bold md:hidden" size="sm" />
-
+        <div class="flex justify-between gap-x-2 items-center">
+          <p
+            class="!text-sm md:text-base font-semibold"
+            v-naira="product.price"
+          ></p>
+          <UButton
+            :aria-label="`add ${product.name} to cart`"
+            label="Add To Cart"
+            variant="outline"
+            class="text-text-primary rounded-full font-bold hidden md:block"
+            size="sm"
+            @click="toggleAddToCart(product)"
+          />
+          <UButton
+            :aria-label="`add ${product.name} to cart`"
+            icon="fa6-solid:cart-plus"
+            variant="outline"
+            class="text-text-primary rounded-full font-bold md:hidden"
+            size="sm"
+            @click="toggleAddToCart(product)"
+          />
         </div>
       </div>
     </template>
@@ -17,13 +45,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { Product } from '~~/types/products';
+import type { Product } from "~~/types/products";
+const {hasItem, toggleAddToCart} = useCartStore()
 
 defineProps<{
   product: Product;
 }>();
 </script>
 
-<style>
-
-</style>
+<style></style>

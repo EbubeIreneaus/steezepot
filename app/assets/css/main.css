@@ -16,6 +16,9 @@
   --font-roboto: 'Roboto', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body{
   font-family: 'Arial';
   color: #1F2937;

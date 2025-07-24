@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "SteezePot - Food Delivery & Catering Services",
+        htmlAttrs: {
+          lang: 'en',
+        },
       meta: [
         {
           name: "description",
@@ -16,21 +19,26 @@ export default defineNuxtConfig({
         },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
+      link: [
+        {rel:'icon', href: '/favicon.ico'}
+      ]
     },
   },
 
+    runtimeConfig: {
+      CLOUDINARY_API_KEY: process.env.CLD_KEY,
+      CLOUDINARY_API_SECRET: process.env.CLD_SECRET,
+      FLW_SECRET: process.env.FLW_SECRET,
+      ADMIN_USER: process.env.ADMIN_USER,
+      ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+      JWT_SECRET: process.env.JWT_SECRET,
+      public:{
+        FLW_PUBLIC: process.env.FLW_PUBLIC
+      }
+    },
   css: ["~/assets/css/main.css"],
 
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    "@nuxt/image",
-    "@nuxt/ui",
-    "@formkit/auto-animate/nuxt",
-    "nuxt-og-image",
-    "@prisma/nuxt"
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/ui", "@formkit/auto-animate/nuxt", "nuxt-og-image", '@nuxtjs/cloudinary', '@pinia/nuxt', "nuxt-aos", "nuxt-schema-org"],
   ui: {
     theme: {
       colors: [
@@ -45,7 +53,8 @@ export default defineNuxtConfig({
     },
   },
 
-  prisma: {
-    generateClient: process.env.NODE_ENV !== 'development'
+  aos: {
+    once: true,
+    duration: 800,
   }
 });

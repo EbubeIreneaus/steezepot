@@ -1,0 +1,1 @@
+ALTER TABLE `messages` ADD `unread` boolean DEFAULT true;

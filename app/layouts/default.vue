@@ -1,5 +1,6 @@
 <template>
   <div class="bg-background">
+    <SplashScreen />
     <HeaderComponent />
     <slot />
     <FooterComponent />

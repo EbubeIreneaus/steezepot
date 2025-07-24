@@ -1,57 +1,108 @@
 <template>
-  <UContainer as="div" class="mb-10">
+  <UContainer as="div" class="mb-10" id="service-we-offer">
     <div class="grid md:grid-cols-2 items-center py-10">
       <div>
-        <NuxtImg src="/images/chef-service.png" width="500" height="500" format="webp" class="mx-auto object-cover" />
+        <img
+          src="/images/chef-service.webp"
+          width="500"
+          height="500"
+          loading="lazy"
+          alt="A chef folding arm"
+        />
       </div>
       <div>
         <div>
-          <h3 class="text-4xl md:text-5xl font-bold">We are more than just a service</h3>
-          <p class="mt-3 mb-7 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nihil maxime, accusamus
-            minima iusto inventore quibusdam consequatur id distinctio vitae, eos voluptatem impedit soluta nostrum
-            deleniti, eaque aliquid harum odit.</p>
+          <h2 class="text-4xl md:text-5xl font-bold">
+            More Than a Chef — Your Trusted Catering & Food Delivery Service in
+            Abuja
+          </h2>
+          <p class="mt-3 mb-7">
+            Whether you're planning a birthday, hosting a house party, or simply
+            craving homemade meals, SteezePot goes beyond food delivery — we
+            bring flavor, warmth, and professional chef services right to your
+            table. From everyday meals to special events, our Abuja-based
+            kitchen is committed to giving you a delicious, stress-free
+            experience every time.
+          </p>
+          <h3 class="text-3xl font-bold mb-5 font-display">
+            Explore Our Most Requested Catering & Food Services in Abuja
+          </h3>
 
-          <div class="grid grid-cols-2 gap-y-4 gap-x-2 mb-10">
-            <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/online-order.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">Online Order</p>
-            </div>
-             <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/time-management.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">Pre - Reservation</p>
-            </div>
+          <ul class="grid sm:grid-cols-2 gap-y-7 gap-x-2 mb-10">
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 pb-1.5 pt-0.5 rounded-full"
+                >🛵</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Homemade Food Delivery Across Abuja
+              </p>
+            </li>
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 py-1 rounded-full"
+                >👩‍🍳</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Private Chef Services for Birthdays & Mini Events
+              </p>
+            </li>
 
-             <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/24-hours.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">24/7 Hours Service</p>
-            </div>
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 py-1 rounded-full"
+                >🎉</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Small Event Catering (Home, Office, Outdoor)
+              </p>
+            </li>
 
-             <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/og-foodie.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">Organized Foodie Place</p>
-            </div>
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 py-1 rounded-full"
+                >🍱</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Customized Platter Orders & Party Packs
+              </p>
+            </li>
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 py-1 rounded-full"
+                >🍰</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Desserts, Drinks, and Nigerian Specialties
+              </p>
+            </li>
 
-             <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/kitchen.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">Clean Kitchen</p>
-            </div>
+            <li class="font-semibold flex gap-x-3 items-center">
+              <span
+                class="text-lg ring ring-text-primary/20 px-1.5 py-1 rounded-full"
+                >⏱️</span
+              >
+              <p class="leading-tight font-roboto text-lg sm:text-base">
+                Same-Day Meal Orders & Scheduled Deliveries
+              </p>
+            </li>
+          </ul>
 
-             <div class="flex gap-x-3 items-center">
-              <NuxtImg src="/images/icons/chef.png" width="30" height="30" class="ring ring-text-primary/20 p-1 rounded-full"/>
-              <p class="font-semibold font-roboto">Super Chef</p>
-            </div>
-
-          </div>
-
-          <UButton label="About Us" color="primary" size="lg" class="font-semibold" />
+          <UButton
+            label="Hire Me for Events"
+            aria-label="Hire Me for Events"
+            size="xl"
+            class="font-semibold px-5 py-3"
+            to="#contact-me"
+            variant="outline"
+            color="neutral"
+          />
         </div>
       </div>
     </div>
   </UContainer>
 </template>
 
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <style></style>

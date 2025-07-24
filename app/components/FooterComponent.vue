@@ -1,5 +1,5 @@
 <template>
- <footer class="">
+ <footer class="border-t-2 border-secondary">
    <UContainer  class="py-20 ">
     <div class="flex flex-col items-center gap-y-5">
       <div class="flex gap-5 justify-center ">
@@ -20,7 +20,7 @@
           <NuxtLink to="/blog" class="hover:text-primary">Bookings</NuxtLink>
         </li>
         <li class="text-text-primary font-semibold text-lg">
-          <NuxtLink to="/contact" class="hover:text-primary">Contact</NuxtLink>
+          <NuxtLink to="#contact-me" class="hover:text-primary">Contact</NuxtLink>
         </li>
       </ul>
 
@@ -29,7 +29,7 @@
           &copy; {{ new Date().getFullYear() }} <span class="font-semibold">SteezePot</span>. All rights reserved.
         </p>
 
-        <p class="text-center">Developed by <a href="https://ebustech.vercel.app" target="__blank" rel="noopener noreferrer"
+        <p class="text-center text-sm">Developed by <a href="https://ebubeireneaus.com.ng" target="__blank"
             class="font-semibold font-roboto">Ebube Ireneaus</a></p>
       </div>
     </div>

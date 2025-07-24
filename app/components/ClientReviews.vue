@@ -2,7 +2,7 @@
   <UContainer class="py-10 mt-5 overflow-x-hidden">
     <div>
        <div class="flex justify-between items-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold">Clients Reviews</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Customers Reviews</h2>
         <div class="flex items-center gap-x-3">
           <UButton icon="fa6-solid:arrow-left" variant="outline" class="text-text-primary rounded-full shadow" size="lg"
             @click="swipePrev()" :disabled="reviewSwiperInstance?.isBeginning" />
@@ -19,9 +19,8 @@
         <template #default>
           <div>
             <p class="font-roboto mb-3">
-              {{ review.review }}
+              {{ review.content }}
             </p>
-            <NuxtImg :src="`/images/users/${review.avatar}`" width="50" height="50" class="rounded-full object-cover object-center mb-3" />
             <p class="font-display font-semibold">{{ review.name }}</p>
           </div>
         </template>
@@ -33,9 +32,11 @@
 </template>
 
 <script lang="ts" setup>
-import { reviews } from '~/libs/review';
 import Swiper from 'swiper';
 import 'swiper/css';
+import type { Review } from '~~/types/review';
+
+const props = defineProps<{reviews: Review[]}>()
 
 const reviewSwiperInstance = ref<Swiper | null>(null)
 

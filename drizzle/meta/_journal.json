@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1752901720052,
+      "tag": "0000_brown_lorna_dane",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1753057080054,
+      "tag": "0001_tearful_sentinels",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1753099254905,
+      "tag": "0002_tired_robin_chapel",
+      "breakpoints": true
+    }
+  ]
+}
