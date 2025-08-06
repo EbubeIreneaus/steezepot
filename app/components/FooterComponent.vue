@@ -1,15 +1,15 @@
 <template>
  <footer class="border-t-2 border-secondary">
-   <UContainer  class="py-20 ">
+   <UContainer as="div" class="py-20 ">
     <div class="flex flex-col items-center gap-y-5">
       <div class="flex gap-5 justify-center ">
-        <UButton icon="fa6-brands:facebook" size="xl" variant="outline" class="rounded-full text-text-primary" />
-        <UButton icon="fa6-brands:twitter" size="xl" variant="outline" class="rounded-full text-text-primary" />
-        <UButton icon="fa6-brands:instagram" size="xl" variant="outline" class="rounded-full text-text-primary" />
-        <UButton icon="fa6-brands:tiktok" size="xl" variant="outline" class="rounded-full text-text-primary" />
+        <UButton icon="fa6-brands:facebook" size="xl" variant="outline" class="rounded-full text-text-primary" aria-label="facebook" />
+        <UButton icon="fa6-brands:twitter" size="xl" variant="outline" class="rounded-full text-text-primary"  aria-label="twitter"/>
+        <UButton icon="fa6-brands:instagram" size="xl" variant="outline" class="rounded-full text-text-primary"  aria-label="instagram" />
+        <UButton icon="fa6-brands:tiktok" size="xl" variant="outline" class="rounded-full text-text-primary"  aria-label="secondary" />
       </div>
 
-      <ul role="navigation" class="flex flex-wrap gap-5 justify-center">
+      <ul class="flex flex-wrap gap-5 justify-center">
         <li class="text-text-primary font-semibold text-lg">
           <NuxtLink to="/" class="hover:text-primary">Home</NuxtLink>
         </li>
@@ -29,7 +29,7 @@
           &copy; {{ new Date().getFullYear() }} <span class="font-semibold">SteezePot</span>. All rights reserved.
         </p>
 
-        <p class="text-center text-sm">Developed by <a href="https://ebubeireneaus.com.ng" target="__blank"
+        <p class="text-center text-sm">Developed by <a href="https://rankwithebube.com" target="__blank"
             class="font-semibold font-roboto">Ebube Ireneaus</a></p>
       </div>
     </div>

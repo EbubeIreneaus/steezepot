@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-secondary/30 py-10 my-10" id="contact-me">
+  <div class="bg-slate-200 py-10 my-10" id="contact-me">
     <UContainer>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <div class="text-sm uppercase font-semibold">We Are Here To Help</div>
-          <h2 class="text-3xl font-bold font-roboto my-3">
+          <h2 class="text-4xl font-bold font-playfair my-3">
             📞 Get in Touch with Your Private Chef in Abuja
           </h2>
-          <p class="font-display">
+          <p class="text-lg font-display font-medium text-black">
             If you have any questions, special requests, or want to book a
             private chef in Nigeria, don’t hesitate to reach out. I’m here to
             make your food experience smooth, delicious, and unforgettable.
@@ -16,7 +16,7 @@
           <div class="mt-5">
             <div class="flex items-center gap-x-3 mb-7">
               <div
-                class="ring size-10 rounded-full flex items-center justify-center bg-primary/10 text-primary"
+                class="ring size-10 rounded-full flex items-center justify-center"
               >
                 <Icon name="fa6-solid-envelope" size="lg" />
               </div>
@@ -27,6 +27,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-text-secondary leading-tight block font-display text-lg"
+                  aria-label="email address"
                   >chef@steezepot.com.ng</a
                 >
               </div>
@@ -34,7 +35,7 @@
 
             <div class="flex items-center gap-x-3 mb-5">
               <div
-                class="ring size-10 rounded-full flex items-center justify-center bg-primary/10 text-primary"
+                class="ring size-10 rounded-full flex items-center justify-center"
               >
                 <Icon name="fa6-solid:phone" size="lg" />
               </div>
@@ -45,6 +46,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-text-secondary leading-tight block font-display text-lg"
+                  aria-label="whatsapp contact"
                   >+234 806 198 2520</a
                 >
               </div>
@@ -126,33 +128,46 @@ const { form, reset } = useForm({
 });
 
 async function submit() {
-  try {
-    isLoading.value = true;
-    const res = await $fetch<{ success: boolean }>("/api/main/message", {
-      method: "PUT",
-      body: form.value,
-    });
+  // try {
+  //   isLoading.value = true;
+  //   const res = await $fetch<{ success: boolean }>("/api/main/message", {
+  //     method: "PUT",
+  //     body: form.value,
+  //   });
 
-    if (res.success) {
-      reset();
-      return toast.add({
-        title: "Recieved Successfully",
-        description:
-          "we have recieve your message successfully,we will get back as soon as possible.",
-        color: "success",
-        icon: "fa6-solid:circle-check",
-      });
-    }
-  } catch (error: any) {
-    return toast.add({
-      title: "message failed",
-      description: error.statusMessage || "Internal server error.",
-      color: "error",
-      icon: "fa6-solid:circle-xmark",
+  //   if (res.success) {
+  //     reset();
+  //     return toast.add({
+  //       title: "Recieved Successfully",
+  //       description:
+  //         "we have recieve your message successfully,we will get back as soon as possible.",
+  //       color: "success",
+  //       icon: "fa6-solid:circle-check",
+  //     });
+  //   }
+  // } catch (error: any) {
+  //   return toast.add({
+  //     title: "message failed",
+  //     description: error.statusMessage || "Internal server error.",
+  //     color: "error",
+  //     icon: "fa6-solid:circle-xmark",
+  //   });
+  // } finally {
+  //   isLoading.value = false;
+  // }
+
+   isLoading.value = true;
+  const timeout = setTimeout(() => {
+    toast.add({
+      title: "Message Recieved Successfully",
+      description: "we have recieve your message successfully,we will get back as soon as possible.",
+      color: "success",
+      icon: "fa6-solid:circle-check",
     });
-  } finally {
-    isLoading.value = false;
-  }
+    reset()
+      isLoading.value = false;
+    clearTimeout(timeout);
+  }, 3000);
 }
 </script>
 

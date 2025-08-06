@@ -39,6 +39,8 @@ import type { DropdownMenuItem } from '@nuxt/ui'
 import { CATEGORIES } from "~/libs/categories";
 import type { Product } from '~~/types/products';
 import { useSchemaOrg, defineProduct } from '#imports';
+import { product as Products } from "~/libs/products";
+
 
 const route = useRoute()
 const {category} = route.params as {category: string}
@@ -53,28 +55,28 @@ const menuLinks: DropdownMenuItem[] = [
   }))
 ];
 
-const {data: Products, error} = await useFetch<Product[]>(()=>`/api/main/product/${category.toLowerCase()}`)
+// const {data: Products, error} = await useFetch<Product[]>(()=>`/api/main/product/${category.toLowerCase()}`)
 
-if(error.value){
-  throw createError({...error.value, message: error.value.statusMessage})
-}
+// if(error.value){
+//   throw createError({...error.value, message: error.value.statusMessage})
+// }
 
-useSchemaOrg(
-  Products.value?.slice(20).map((product) => {
-    defineProduct({
-      "@id": `product-${product.id}`,
-      "@type": 'Product',
-      name: product.name,
-      image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
-      description: product.desc,
-      offers: {
-        "@type": 'Offer',
-        price: product.price,
-        priceCurrency: 'NGN'
-      }
-    })
-  })
-)
+// useSchemaOrg(
+//   Products.value?.slice(20).map((product) => {
+//     defineProduct({
+//       "@id": `product-${product.id}`,
+//       "@type": 'Product',
+//       name: product.name,
+//       image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
+//       description: product.desc,
+//       offers: {
+//         "@type": 'Offer',
+//         price: product.price,
+//         priceCurrency: 'NGN'
+//       }
+//     })
+//   })
+// )
 
 const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
 useSeoMeta({

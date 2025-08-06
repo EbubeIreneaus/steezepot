@@ -1,10 +1,10 @@
 <template>
   <section id="frequently-asked-question" class="py-10">
-    <u-container>
-      <h2 class="text-4xl font-bold font-roboto text-center mb-10">Frequently Asked Questions</h2>
+    <u-container class="card card-body">
+      <h2 class="text-4xl font-bold font-playfair text-center mb-10">Frequently Asked Questions</h2>
 
       <u-accordion :items="faqs_transformed" type="multiple" trailing-icon="fa6-solid:plus" :ui="{
-       label: 'text-xl font-bold font-display'
+       label: 'text-xl font-bold font-playfair text-black'
       }">
         <template #body="{item}">
           <h3 class="font-roboto font-medium text-base">{{ item.content }}</h3>

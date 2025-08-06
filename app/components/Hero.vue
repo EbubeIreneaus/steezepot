@@ -4,7 +4,7 @@
       class="w-full flex flex-col md:flex-row gap-y-10 items-center justify-between text-text-primary py-10"
     >
       <div class="size-full">
-        <h1 class="text-4xl font-extrabold mb-5" data-aos="fade-up">
+        <h1 class="text-4xl font-extrabold mb-5">
           Delicious Homemade Meals & Private Chef Service for Your Events in
           Abuja.
         </h1>

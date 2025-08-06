@@ -1,15 +1,16 @@
 <template>
-  <header ref="header" class="w-full bg-background shadow-sm">
+  <header ref="header" class="w-full bg-white shadow-sm">
     <UContainer
       as="div"
       class="flex justify-between items-center mx-auto py-5 font-roboto"
     >
       <div>
         <img
-          src="/logo.webp"
+          src="/logo_70.webp"
           width="40"
           height="40"
           class="rounded-full w-[40px] h-[40px]"
+          alt="logo"
         />
       </div>
       <nav class="hidden md:block">

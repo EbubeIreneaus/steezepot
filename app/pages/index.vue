@@ -2,13 +2,13 @@
   <main>
     <Hero />
     <!-- rename popular dish to recommend -->
-    <PopularDishes  :products="data?.recomend ?? []" />
+    <PopularDishes  :products="product ?? []" />
     <MiniServce />
-    <RegularMenuPack :products="data?.popular ?? []" />
+    <RegularMenuPack :products="product ?? []" />
     <MiniMakeReservation />
-    <ClientReviews :reviews="data?.reviews ?? []" />
+    <ClientReviews :reviews="reviews ?? []" />
     <ContactUs />
-    <FAQ :faqs="data?.faqs ?? []" />
+    <FAQ :faqs="faqs ?? []" />
     <NewsLetter />
   </main>
 </template>
@@ -18,6 +18,9 @@ import type { Faq } from "~~/types/faq";
 import type { Review } from "~~/types/review";
 import type { Product } from "~~/types/products";
 import { useSchemaOrg, defineProduct, defineQuestion, defineComment } from "#imports";
+import { product } from "~/libs/products";
+import { faqs } from "~/libs/faq";
+import { reviews } from "~/libs/review";
 
 defineOgImageComponent("NuxtSeo", {
   title: "STEEZEPOT",
@@ -40,55 +43,56 @@ useSeoMeta({
   
 });
 
-const { data, error } = await useAsyncData("homeData", async () => {
-    const [recomend, popular, reviews, faqs] = await Promise.all([
-      $fetch("/api/main/product/recomend") as unknown as Product[],
-      $fetch("/api/main/product/popular") as unknown as Product[],
-      $fetch("/api/main/reviews") as unknown as Review[],
-      $fetch("/api/main/faq") as unknown as Faq[],
-    ]);
-    return { recomend, popular, reviews, faqs };
-  });
 
-if (error.value) {
-  throw createError(error.value.message);
-}
+// const { data, error } = await useAsyncData("homeData", async () => {
+//     const [recomend, popular, reviews, faqs] = await Promise.all([
+//       $fetch("/api/main/product/recomend") as unknown as Product[],
+//       $fetch("/api/main/product/popular") as unknown as Product[],
+//       $fetch("/api/main/reviews") as unknown as Review[],
+//       $fetch("/api/main/faq") as unknown as Faq[],
+//     ]);
+//     return { recomend, popular, reviews, faqs };
+//   });
 
-useSchemaOrg([
-  ...(data.value?.popular ?? []).map((product: Product) =>
-    defineProduct({
-      "@id": `#menu-${product.id}`,
-      "@type": "Product",
-      name: product.name,
-      description: product.desc,
-      image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
-      offers: {
-        "@type": "Offer",
-        price: product.price,
-        priceCurrency: "NGN",
-      },
-    })
-  ),
+// if (error.value) {
+//   throw createError(error.value.message);
+// }
 
-  ...(data.value?.faqs ?? []).map((faq) => {
-    defineQuestion({
-      "@type": 'Faq',
-      "@id": `#faq-${faq.id}`,
-      acceptedQuestion: faq.question,
-      acceptedAnswer: faq.answer
-    })
-  }),
-   ...(data.value?.reviews ?? []).map((review) => {
-    defineComment({
-      "@type": 'Comment',
-      "@id": `#comment-${review.id}`,
-      text: review.content,
-      author:{
-        name: review.name
-      }
-    })
-  })
-]);
+// useSchemaOrg([
+//   ...(data.value?.popular ?? []).map((product: Product) =>
+//     defineProduct({
+//       "@id": `#menu-${product.id}`,
+//       "@type": "Product",
+//       name: product.name,
+//       description: product.desc,
+//       image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
+//       offers: {
+//         "@type": "Offer",
+//         price: product.price,
+//         priceCurrency: "NGN",
+//       },
+//     })
+//   ),
+
+//   ...(data.value?.faqs ?? []).map((faq) => {
+//     defineQuestion({
+//       "@type": 'Faq',
+//       "@id": `#faq-${faq.id}`,
+//       acceptedQuestion: faq.question,
+//       acceptedAnswer: faq.answer
+//     })
+//   }),
+//    ...(data.value?.reviews ?? []).map((review) => {
+//     defineComment({
+//       "@type": 'Comment',
+//       "@id": `#comment-${review.id}`,
+//       text: review.content,
+//       author:{
+//         name: review.name
+//       }
+//     })
+//   })
+// ]);
 
 useHead({
   link: [

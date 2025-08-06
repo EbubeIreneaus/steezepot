@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-import { products } from "~/libs/products";
+import { product as Products } from "~/libs/products";
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { CATEGORIES } from "~/libs/categories";
 import type { Product } from "~~/types/products";
@@ -72,30 +72,30 @@ const menuLinks = [
   }))
 );
 
-const { data: Products, error } = await useFetch<Product[]>(
-  () => `/api/main/product/popular`
-);
+// const { data: Products, error } = await useFetch<Product[]>(
+//   () => `/api/main/product/popular`
+// );
 
-if (error.value) {
-  throw createError({ ...error.value, message: error.value.statusMessage });
-}
+// if (error.value) {
+//   throw createError({ ...error.value, message: error.value.statusMessage });
+// }
 
-useSchemaOrg(
-  Products.value?.slice(20).map((product) => {
-    defineProduct({
-      "@id": `product-${product.id}`,
-      "@type": "Product",
-      name: product.name,
-      image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
-      description: product.desc,
-      offers: {
-        "@type": "Offer",
-        price: product.price,
-        priceCurrency: "NGN",
-      },
-    });
-  })
-);
+// useSchemaOrg(
+//   Products.value?.slice(20).map((product) => {
+//     defineProduct({
+//       "@id": `product-${product.id}`,
+//       "@type": "Product",
+//       name: product.name,
+//       image: `https://res.cloudinary.com/dx0f23f3t/image/upload/${product.image}`,
+//       description: product.desc,
+//       offers: {
+//         "@type": "Offer",
+//         price: product.price,
+//         priceCurrency: "NGN",
+//       },
+//     });
+//   })
+// );
 
 useSeoMeta({
   title: 'SteezePot Kitchen Menu — Order Delicious Homemade Meals Online',

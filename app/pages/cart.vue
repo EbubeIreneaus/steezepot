@@ -2,15 +2,24 @@
   <UContainer class="">
     <div class="flex justify-between items-center py-5 my-5">
       <h1 class="text-3xl md:text-4xl font-bold font-display">Cart</h1>
-      <UButton icon="fa6-solid:arrow-left" label="continue shopping" variant="outline" class="text-text-primary"
-        to="/" />
+      <UButton
+        icon="fa6-solid:arrow-left"
+        label="continue shopping"
+        variant="outline"
+        class="text-text-primary"
+        to="/"
+      />
     </div>
 
     <div>
-      <u-table :data="Cart" :ui="{
-        th: 'text-text-primary font-bold font-display capitalize text-lg',
-        td: 'text-text-primary',
-      }" :columns="column" />
+      <u-table
+        :data="Cart"
+        :ui="{
+          th: 'text-text-primary font-bold font-display capitalize text-lg',
+          td: 'text-text-primary',
+        }"
+        :columns="column"
+      />
     </div>
 
     <div class="flex flex-col lg:flex-row gap-10 justify-between my-15">
@@ -21,18 +30,36 @@
             <h3 class="text-lg mb-3 font-display font-semibold">
               Personal Information
             </h3>
-            <div class="flex flex-col md:flex-row md:flex-wrap justify-between gap-5">
+            <div
+              class="flex flex-col md:flex-row md:flex-wrap justify-between gap-5"
+            >
               <UFormField label="name" required>
-                <UInput placeholder="name" variant="soft" class="bg-slate-200 rounded-md w-full"
-                  v-model="userForm.name" />
+                <UInput
+                  placeholder="name"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="userForm.name"
+                />
               </UFormField>
               <UFormField label="email" required>
-                <UInput placeholder="email" type="email" inputmode="email" variant="soft"
-                  class="bg-slate-200 rounded-md w-full" v-model="userForm.email" />
+                <UInput
+                  placeholder="email"
+                  type="email"
+                  inputmode="email"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="userForm.email"
+                />
               </UFormField>
               <UFormField label="phone" required>
-                <UInput placeholder="080 123 456 7890" type="tel" inputmode="tel" variant="soft"
-                  class="bg-slate-200 rounded-md w-full" v-model="userForm.phone" />
+                <UInput
+                  placeholder="080 123 456 7890"
+                  type="tel"
+                  inputmode="tel"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="userForm.phone"
+                />
               </UFormField>
             </div>
           </div>
@@ -41,22 +68,42 @@
             <h3 class="text-lg mb-3 font-display font-semibold">
               Delivery Address
             </h3>
-            <div class="flex flex-col md:flex-row md:flex-wrap justify-between gap-5">
+            <div
+              class="flex flex-col md:flex-row md:flex-wrap justify-between gap-5"
+            >
               <UFormField label="state" required>
-                <UInput placeholder="Abuja" variant="soft" class="bg-slate-200 rounded-md w-full"
-                  v-model="addressForm.state" readonly />
+                <UInput
+                  placeholder="Abuja"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="addressForm.state"
+                  readonly
+                />
               </UFormField>
               <UFormField label="city" required>
-                <UInput placeholder="Kubwa" variant="soft" class="bg-slate-200 rounded-md w-full"
-                  v-model="addressForm.city" />
+                <UInput
+                  placeholder="Kubwa"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="addressForm.city"
+                />
               </UFormField>
               <UFormField label="bustop/landmark" required>
-                <UInput placeholder="FHA Brige" variant="soft" class="bg-slate-200 rounded-md w-full"
-                  v-model="addressForm.bustop" />
+                <UInput
+                  placeholder="FHA Brige"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md w-full"
+                  v-model="addressForm.bustop"
+                />
               </UFormField>
               <UFormField label="Street Address" required>
-                <UTextarea placeholder="no.2 olumolu estate" :rows="2" variant="soft"
-                  class="bg-slate-200 rounded-md !w-full" v-model="addressForm.street_address" />
+                <UTextarea
+                  placeholder="no.2 olumolu estate"
+                  :rows="2"
+                  variant="soft"
+                  class="bg-slate-200 rounded-md !w-full"
+                  v-model="addressForm.street_address"
+                />
               </UFormField>
             </div>
           </div>
@@ -78,7 +125,13 @@
           </div>
 
           <template #footer>
-            <UButton label="checkout" trailingIcon="fa6-solid:arrow-right" size="xl" @click="CHECKOUT()" :loading="isLoading"></UButton>
+            <UButton
+              label="checkout"
+              trailingIcon="fa6-solid:arrow-right"
+              size="xl"
+              @click="CHECKOUT()"
+              :loading="isLoading"
+            ></UButton>
           </template>
         </UCard>
       </div>
@@ -95,7 +148,7 @@ import type { Order } from "~~/types/order";
 import type { Product } from "~~/types/products";
 declare function FlutterwaveCheckout(options: any): any;
 
-const isLoading = ref(false)
+const isLoading = ref(false);
 const CartStore = useCartStore();
 const { Cart, totalPrice } = storeToRefs(CartStore);
 const { toggleAddToCart, incrementItemQuantity, decrementItemQuantity } =
@@ -200,60 +253,72 @@ const { form: userForm, reset: resetUserForm } = useForm({
 
 async function CHECKOUT() {
   try {
-    isLoading.value = true
-    const res = await $fetch<{ success: boolean; data: Order }>(
-      "/api/main/create_order",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          items: Cart.value,
-          totalAmount: totalPrice.value.toString(),
-          deliveryAddress: addressForm.value,
-          user: userForm.value,
-        }),
-      }
-    );
-
+    isLoading.value = true;
+    // const res = await $fetch<{ success: boolean; data: Order }>(
+    //   "/api/main/create_order",
+    //   {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       items: Cart.value,
+    //       totalAmount: totalPrice.value.toString(),
+    //       deliveryAddress: addressForm.value,
+    //       user: userForm.value,
+    //     }),
+    //   }
+    // );
+    
+    const res = await new Promise<{ success: boolean }>((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ success: true });
+      }, 3000);
+    });
     if (res.success) {
-      const user = JSON.parse(res.data.user as unknown as string);
+      const user = "Guest User";
       const modal = FlutterwaveCheckout({
         public_key: config.public.FLW_PUBLIC,
-        tx_ref: "#order-" + res.data.id,
-        amount: Number(res.data.totalAmount),
+        tx_ref: "#order-" + "283747478",
+        amount: Number(totalPrice.value),
         currency: "NGN",
         payment_options: "card, opay, banktransfer, account, credit, ussd",
         callback: async (response: any) => {
           if (response.status == "completed") {
             try {
-              const res = await $fetch<{ success: boolean }>("/api/main/flw-checkout", {
-                method: "POST",
-                body: response,
-              });
+              // const res = await $fetch<{ success: boolean }>("/api/main/flw-checkout", {
+              //   method: "POST",
+              //   body: response,
+              // });
+              const res = await new Promise<{ success: boolean }>(
+                (resolve, reject) => {
+                  setTimeout(() => {
+                    resolve({ success: true });
+                  }, 3000);
+                }
+              );
               if (res.success) {
                 toast.add({
                   title: "Payment Confirmed",
                   description:
                     "We have confirm your payment and we are processing your order",
-                  icon: 'fa6-solid:circle-check',
-                  color: 'success'
+                  icon: "fa6-solid:circle-check",
+                  color: "success",
                 });
-                modal.close()
+                modal.close();
               }
             } catch (error: any) {
               toast.add({
                 title: "Payment Unsuccessful",
                 description: error.statusMessage,
-                icon: 'fa6-solid:circle-xmark',
-                color: 'error'
+                icon: "fa6-solid:circle-xmark",
+                color: "error",
               });
-              modal.close()
+              modal.close();
             }
           }
         },
         customer: {
-          email: user.email,
-          phone_number: user.phone,
-          name: user.name,
+          email: 'guest@gmail.com',
+          phone_number: '+1234567890',
+          name: 'Unknown Guest',
         },
         customizations: {
           title: "Steezepot",
@@ -262,16 +327,15 @@ async function CHECKOUT() {
         },
       });
     }
-    resetAddressForm()
-    resetUserForm()
-    Cart.value = []
+    resetAddressForm();
+    resetUserForm();
+    Cart.value = [];
   } catch (error: any) {
     console.log(error.statusMessage);
-  }finally {
-    isLoading.value = false
+  } finally {
+    isLoading.value = false;
   }
 }
-
 </script>
 
 <style scoped></style>

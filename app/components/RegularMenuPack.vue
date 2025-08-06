@@ -18,6 +18,7 @@
           size="lg"
           class="px-8 font-semibold"
           to="/menu"
+          aria-label="see all"
         />
       </div>
       <div

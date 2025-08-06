@@ -1,11 +1,11 @@
 <template>
   <div v-if="loading">
     <div
-      class="fixed !h-dvh inset-0 z-[999999] flex flex-col items-center justify-center space-y-4 bg-background"
+      class="fixed !h-dvh inset-0 z-[999999] flex flex-col items-center justify-center space-y-4 bg-white"
     >
       <!-- App Logo -->
       <img
-        src="/logo.webp"
+        src="/logo_70.webp"
         alt="App Logo"
         width="50px"
         height="50px"

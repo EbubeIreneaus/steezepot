@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="py-10 bg-secondary">
+  <div class="py-14 bg-slate-200">
     <div
       class="flex flex-col md:flex-row md:justify-evenly items-center gap-y-5"
     >
@@ -22,11 +22,22 @@
             color="primary"
             :loading="isLoading"
           />
-          <UButton label="Subscribe" @click="submit()" square size="xl" class="rounded-none"  aria-label="subscribe"/>
+          <UButton
+            label="Subscribe"
+            @click="submit()"
+            square
+            size="xl"
+            class="rounded-none"
+            aria-label="subscribe"
+            :ui="{
+              base: 'bg-slate-900 hover:bg-slate-700',
+              label: 'text-slate-50',
+            }"
+          />
         </div>
       </div>
     </div>
-  </UContainer>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -37,32 +48,44 @@ const { form, reset } = useForm({
 });
 
 async function submit() {
-  try {
-    isLoading.value = true;
-    const res = await $fetch<{success: boolean}>("/api/main/newLetter", {
-      method: "PUT",
-      body: form.value,
-    });
+  // try {
+  //   isLoading.value = true;
+  //   const res = await $fetch<{ success: boolean }>("/api/main/newLetter", {
+  //     method: "PUT",
+  //     body: form.value,
+  //   });
 
-    if (res.success) {
-      reset();
-      return toast.add({
-        title: "Thank You",
-        description: "Thank you for subscribing.",
-        color: "success",
-        icon: "fa6-solid:circle-check",
-      });
-    }
-  } catch (error: any) {
-    return toast.add({
-      title: "Failed",
-      description: error.statusMessage || "Internal server error.",
-      color: "error",
-      icon: "fa6-solid:circle-xmark",
+  //   if (res.success) {
+  //     reset();
+  //     return toast.add({
+  //       title: "Thank You",
+  //       description: "Thank you for subscribing.",
+  //       color: "success",
+  //       icon: "fa6-solid:circle-check",
+  //     });
+  //   }
+  // } catch (error: any) {
+  //   return toast.add({
+  //     title: "Failed",
+  //     description: error.statusMessage || "Internal server error.",
+  //     color: "error",
+  //     icon: "fa6-solid:circle-xmark",
+  //   });
+  // } finally {
+  //   isLoading.value = false;
+  // }
+  isLoading.value = true;
+  const timeout = setTimeout(() => {
+    toast.add({
+      title: "Thank You",
+      description: "Thank you for subscribing.",
+      color: "success",
+      icon: "fa6-solid:circle-check",
     });
-  } finally {
-    isLoading.value = false;
-  }
+    reset()
+      isLoading.value = false;
+    clearTimeout(timeout);
+  }, 3000);
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-secondary mt-10 py-3">
+  <section class="bg-slate-200 mt-10 py-3">
     <UContainer as="div" class="py-5">
       <div class="flex flex-col-reverse md:flex-row items-center">
         <div class="max-w-xl w-full">
@@ -7,7 +7,7 @@
             👨‍🍳 Need a Private Chef for Your Event in Abuja? Book an Appointment
             Today
           </h2>
-          <p class="my-7 font-semibold">
+          <p class="my-7 text-base font-semibold">
             Let me be your private chef for birthdays, house parties, and mini
             events in Abuja — I’ll handle the cooking while you enjoy every
             moment with your guests.
@@ -23,7 +23,7 @@
           />
         </div>
         <div class="flex md:justify-center w-full">
-          <div class="p-5 md:bg-primary/30 rounded-full md:ring ring-primary">
+          <div class="p-5 md:bg-white rounded-full">
             <img
               src="/images/juice-5.webp"
               width="200"
