@@ -7,9 +7,9 @@
       <div>
         <img
           src="/logo_70.webp"
-          width="40"
-          height="40"
-          class="rounded-full w-[40px] h-[40px]"
+          width="56"
+          height="55"
+          class="rounded-full"
           alt="logo"
         />
       </div>
