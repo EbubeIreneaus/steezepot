@@ -27,6 +27,7 @@
             <img
               src="/images/juice-5.webp"
               width="200"
+              height="300px"
               class="object-cover w-[100px] md:w-[200px]"
               alt="Refreshing blue cocktail with lemon slices, mint leaves, and ice in a tall glass"
               loading="lazy"

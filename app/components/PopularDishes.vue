@@ -96,10 +96,11 @@ onMounted(() => {
   width: 100%;
   overflow-x: hidden;
 }
-
+/* 
 .swiper-wrapper {
-  align-items: stretch; /* ensures all slides align height-wise */
+  align-items: stretch; ensures all slides align height-wise 
 }
+ */
 
 .swiper-slide {
   display: flex;

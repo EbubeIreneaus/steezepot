@@ -10,7 +10,6 @@
         </h1>
         <p
           class="mb-5 max-w-md text-black font-roboto"
-          data-aos="fade-up"
         >
           Enjoy freshly prepared, home-cooked meals delivered to your doorstep,
           or book a professional chef for your next small event. At SteezePot,
