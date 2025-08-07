@@ -11,7 +11,6 @@
         <p
           class="mb-5 max-w-md text-black font-roboto"
           data-aos="fade-up"
-          data-aos-delay="300"
         >
           Enjoy freshly prepared, home-cooked meals delivered to your doorstep,
           or book a professional chef for your next small event. At SteezePot,
@@ -25,7 +24,6 @@
             size="xl"
             class="rounded-md font-medium bg-text-primary hover:!bg-text-body text-white px-5 py-3"
             data-aos="fade-right"
-            data-aos-delay="600"
           />
           <UButton
             icon="fa6-solid:cookie"
@@ -35,7 +33,6 @@
             aria-label="Book a Private Chef"
             to="#contact-me"
             data-aos="fade-left"
-            data-aos-delay="600"
           />
         </div>
       </div>
@@ -80,7 +77,7 @@
                   alt: `${dish.name}-icon`,
                 }"
                 data-aos="fade-left"
-                :data-aos-delay="(index / 10) * 500 + 1000"
+                :data-aos-delay="(index / 10) * 500 + 500"
               >
                 {{ dish.name }}
               </UButton>
