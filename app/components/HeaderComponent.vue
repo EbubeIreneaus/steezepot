@@ -6,7 +6,7 @@
     >
       <div>
         <img
-          src="/logo_50.webp"
+          src="/logo_60.webp"
           width="40"
           height="40"
           class="rounded-full"
