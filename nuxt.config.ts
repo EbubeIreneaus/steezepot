@@ -55,6 +55,5 @@ export default defineNuxtConfig({
 
   aos: {
     once: true,
-    duration: 800,
   }
 });
