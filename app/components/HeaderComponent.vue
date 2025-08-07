@@ -6,9 +6,9 @@
     >
       <div>
         <img
-          src="/logo_70.webp"
-          width="56"
-          height="55"
+          src="/logo_50.webp"
+          width="40"
+          height="40"
           class="rounded-full"
           alt="logo"
         />

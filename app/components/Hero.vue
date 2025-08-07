@@ -1,14 +1,18 @@
 <template>
   <UContainer as="div" class="overflow-x-hidden">
     <div
-      class="w-full flex flex-col md:flex-row gap-y-10 items-center justify-between text-text-primary py-10"
+      class="w-full flex flex-col md:flex-row gap-y-10 items-center justify-between text-black py-10"
     >
       <div class="size-full">
-        <h1 class="text-4xl font-extrabold mb-5">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 font-playfair">
           Delicious Homemade Meals & Private Chef Service for Your Events in
           Abuja.
         </h1>
-        <p class="mb-5 max-w-md  text-black font-roboto" data-aos="fade-up" data-aos-delay="500">
+        <p
+          class="mb-5 max-w-md text-black font-roboto"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           Enjoy freshly prepared, home-cooked meals delivered to your doorstep,
           or book a professional chef for your next small event. At SteezePot,
           we serve delicious Nigerian dishes made with love — perfect for
@@ -30,7 +34,7 @@
             size="xl"
             aria-label="Book a Private Chef"
             to="#contact-me"
-             data-aos="fade-left"
+            data-aos="fade-left"
             data-aos-delay="1000"
           />
         </div>
@@ -49,6 +53,11 @@
             ></div>
             <img
               src="/images/hero-dish.webp"
+              srcset="
+                /images/hero-dish.webp     280w,
+                /images/hero-dish_184.webp 184w
+              "
+              sizes="(min-width: 768px) 280px, 184px"
               width="280"
               height="290"
               quality="90"
@@ -71,7 +80,7 @@
                   alt: `${dish.name}-icon`,
                 }"
                 data-aos="fade-left"
-                :data-aos-delay="index/10 * 500 + 1000 "
+                :data-aos-delay="(index / 10) * 500 + 1000"
               >
                 {{ dish.name }}
               </UButton>
