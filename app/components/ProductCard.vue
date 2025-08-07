@@ -46,7 +46,7 @@
 
 <script lang="ts" setup>
 import type { Product } from "~~/types/products";
-const {hasItem, toggleAddToCart} = useCartStore()
+const { toggleAddToCart} = useCartStore()
 
 defineProps<{
   product: Product;

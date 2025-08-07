@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { Faq } from "~~/types/faq";
-import type { Review } from "~~/types/review";
-import type { Product } from "~~/types/products";
-import { useSchemaOrg, defineProduct, defineQuestion, defineComment } from "#imports";
+// import type { Faq } from "~~/types/faq";
+// import type { Review } from "~~/types/review";
+// import type { Product } from "~~/types/products";
+// import { useSchemaOrg, defineProduct, defineQuestion, defineComment } from "#imports";
 import { product } from "~/libs/products";
 import { faqs } from "~/libs/faq";
 import { reviews } from "~/libs/review";
