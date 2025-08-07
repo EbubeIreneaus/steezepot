@@ -73,8 +73,6 @@
                   src: dish.image,
                   alt: `${dish.name}-icon`,
                 }"
-                data-aos="fade-up"
-                :data-aos-delay="(index / 10) * 500 + 500"
               >
                 {{ dish.name }}
               </UButton>
