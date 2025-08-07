@@ -91,23 +91,23 @@
 const dishes = [
   {
     name: "Dishes",
-    image: "/images/icons/dishes.png",
+    image: "/images/icons/dishes.webp",
   },
   {
     name: "Dessert",
-    image: "/images/icons/dessert.png",
+    image: "/images/icons/dessert.webp",
   },
   {
     name: "Drinks",
-    image: "/images/icons/drinks.png",
+    image: "/images/icons/drinks.webp",
   },
   {
     name: "Platter",
-    image: "/images/icons/platter.png",
+    image: "/images/icons/platter.webp",
   },
   {
     name: "Snacks",
-    image: "/images/icons/snacks.png",
+    image: "/images/icons/snacks.webp",
   },
 ];
 </script>
