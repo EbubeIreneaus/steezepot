@@ -23,7 +23,6 @@
             to="#regular-menu"
             size="xl"
             class="rounded-md font-medium bg-text-primary hover:!bg-text-body text-white px-5 py-3"
-            data-aos="fade-right"
           />
           <UButton
             icon="fa6-solid:cookie"
@@ -32,7 +31,6 @@
             size="xl"
             aria-label="Book a Private Chef"
             to="#contact-me"
-            data-aos="fade-left"
           />
         </div>
       </div>
@@ -76,7 +74,7 @@
                   src: dish.image,
                   alt: `${dish.name}-icon`,
                 }"
-                data-aos="fade-left"
+                data-aos="fade-up"
                 :data-aos-delay="(index / 10) * 500 + 500"
               >
                 {{ dish.name }}
